@@ -18,6 +18,7 @@ Nesta rota podemos cadastrar o usuário fazendo um post, a API espera dados no s
 	"avatar": "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info"
 }
 ```
+Dando certo o servidor repondera com ``` 200 - "Ok" ``` 
 
 Caso de ```Username``` ou corpo da requisição vazio irá retornar irá retornar erro 404.
 
@@ -39,6 +40,7 @@ Utilizando o metodo GET o servidor devolverá os ultimos 10 tweets da seguinte f
 	}
 ]
 ```
+Dando certo o servidor repondera com ``` 200 - "Ok" ``` 
 
 # Rota ``` /tweets ```  - POST :outbox_tray:
 Para enviar um Tweet para o servidor faça um POST na rota. O servidor espera os seguintes dados:
@@ -48,4 +50,5 @@ Para enviar um Tweet para o servidor faça um POST na rota. O servidor espera os
 	tweet: "eu amo o hub"
 }
 ``` 
+Dando certo o servidor repondera com ``` 200 - "Ok" ``` 
 Obs: Envie somente o username e o tweet o servidor automaticamente buscara a foto do usuário que fez o tweet se o mesmo estiver cadastrado.
