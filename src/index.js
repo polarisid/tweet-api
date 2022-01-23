@@ -1,16 +1,10 @@
 import express,{json} from "express";
 import cors from 'cors';
 let users =[
-{
-	"username": 'bobesponja', 
-	"avatar": "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info" 
-}]
+
+]
 let tweets=[
-    {
-        "username": "bobesponja",
-        "avatar": "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info" ,
-        "tweet": "salveLek"
-    }
+
 
 ]
 const server = express();
@@ -37,13 +31,14 @@ server.post('/sign-up',(req,res)=>{
 })
 server.post('/tweets',(req,res)=>{
     let userSend = users.find(element => element.username ===req.body.username);
-    // console.log(userSend)
     tweets.push({"username":req.body.username,"avatar":userSend.avatar,"tweet":req.body.tweet})
-    //console.log(tweets)
     res.send("0K")
 })
 server.get('/tweets',(req,res)=>{
-
-    res.send(tweets)
-    
+    if(tweets.length<=10){
+        res.send(tweets.slice(0).reverse())
+    }
+    else{
+    res.send(tweets.slice(tweets.length-10).slice(0).reverse())
+    }
 })
