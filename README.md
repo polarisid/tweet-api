@@ -1,7 +1,7 @@
 # Tweet-api :bird:
 
-Uma API simples onde é possivel fazer um bate papo simples.
-#Como rodar?
+Uma API simples onde é possivel fazer um bate papo simples. Feita com NodeJs, Express e muito carinho :heartbeat: <br>
+## Como rodar?
 - ```npm init```
 
 - ```npm start```
@@ -10,7 +10,7 @@ Abra ``` http://localhost:5000/ ``` e veja se é possível ver meu recado! <3
 
 
 
- # Rota ``` /sign-up ```  - POST  :outbox_tray:
+ ## Rota ``` /sign-up ```  - POST  :outbox_tray:
 Nesta rota podemos cadastrar o usuário fazendo um post, a API espera dados no seguinte formato:
 ``` 
 {
@@ -22,7 +22,7 @@ Dando certo o servidor repondera com ``` 200 - "Ok" ```
 
 Caso de ```Username``` ou corpo da requisição vazio irá retornar irá retornar erro 404.
 
-# Rota ``` /tweets ```  - GET :inbox_tray:
+## Rota ``` /tweets ```  - GET :inbox_tray:
 Nesta rota obtemos todos os Tweets armazenados localmente na variável.
 Utilizando o metodo GET o servidor devolverá os ultimos 10 tweets da seguinte forma.
 
@@ -42,7 +42,7 @@ Utilizando o metodo GET o servidor devolverá os ultimos 10 tweets da seguinte f
 ```
 Dando certo o servidor repondera com ``` 200 - "Ok" ``` 
 
-# Rota ``` /tweets ```  - POST :outbox_tray:
+## Rota ``` /tweets ```  - POST :outbox_tray:
 Para enviar um Tweet para o servidor faça um POST na rota. O servidor espera os seguintes dados:
 ``` 
 {
