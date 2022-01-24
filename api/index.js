@@ -19,20 +19,25 @@ server.get('/',(req,res)=>{
 
 server.post('/sign-up',(req,res)=>{
 
-    if(req.body.username===""|| req.body===null||req.body===""){
-        res.status(404).send('Sorry cant find that!');
+    if(req.body.username===""|| req.body===null||req.body===""||req.body.avatar===""){
+        res.status(400).send('BAD REQUEST');
     }
     else{
         users.push(req.body)
         console.log(users)
-        res.send("0K")
+        res.status(201).send('OK');
     }
 
 })
 server.post('/tweets',(req,res)=>{
+    if(req.body.username===""|| req.body===null||req.body===""||req.body.tweet===""){
+        res.status(400).send('BAD REQUEST');
+    }
+    else{
     let userSend = users.find(element => element.username ===req.body.username);
     tweets.push({"username":req.body.username,"avatar":userSend.avatar,"tweet":req.body.tweet})
-    res.send("0K")
+    res.status(201).send('OK');
+}
 })
 server.get('/tweets',(req,res)=>{
     if(tweets.length<=10){
